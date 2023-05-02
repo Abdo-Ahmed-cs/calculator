@@ -17,10 +17,14 @@ const calcSlice = createSlice({
         },
         add: (state, action) => {
             const value = action.payload
-            state.value = state.value + "" + value
+            if (value === "+" || value === "-" || value === "*" || value === "/" ){
+                state.value = state.value + " " + value + " "
+            }else {
+                state.value = state.value + "" + value
+            }
         },
         evaluate: (state) => {
-                state.value = '' + eval(state.value)
+                state.value = '' + eval(state.value.replace(/^0+/, '').replace(/\b0+/g, ''))
         },
         changeTheme: (state, action) => {
             state.theme = action.payload
