@@ -197,3 +197,37 @@
 .calc-body button:active {
     transform: scale(0.9);
 }
+
+.credentials {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    color: white;
+    padding: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.media {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+}
+
+.media a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .credentials {
+        font-size: 0.8rem;
+    }
+
+    .media {
+        font-size: 0.8rem;
+        gap: 10px;
+    }
+}

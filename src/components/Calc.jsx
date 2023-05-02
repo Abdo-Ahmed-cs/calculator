@@ -3,8 +3,11 @@ import "../styles/style.css"
 import {useSelector, useDispatch} from "react-redux"
 import { changeTheme, inputValue, theme } from '../app/calcSlice'
 import {reset, backspace, add, evaluate} from '../app/calcSlice'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { faFacebook, faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
 export default function Calc() {
+    const currunt_year = new Date().getFullYear()
     const calcValue = useSelector(inputValue)
     const myTheme = useSelector(theme)
     const dispathc = useDispatch()
@@ -48,6 +51,23 @@ export default function Calc() {
           <button className="numbers" id='equal' onClick={() => dispathc(evaluate())}>=</button>
         </div>
     </div>
+    <footer className='credentials'>
+          <div><span>© Abdelrahman Ahmed / {currunt_year}</span></div>
+          <div className='media'>
+            <a href="https://web.facebook.com/profile.php?id=100005933071217" target='_blank'>
+              <FontAwesomeIcon icon={faFacebook} beat/>
+            </a>
+            <a href="https://twitter.com/Abdo_Megahed03" target='_blank'>
+              <FontAwesomeIcon icon={faTwitter} beat/>
+            </a>
+            <a href="https://www.linkedin.com/in/abdelrahman-ahmed-saad-b74b35260/" target='_blank'>
+              <FontAwesomeIcon icon={faLinkedinIn} beat/>
+            </a>
+            <a href="https://github.com/Abdo-Ahmed-cs" target='_blank'>
+              <FontAwesomeIcon icon={faGithub} beat/>
+            </a>
+          </div>
+        </footer>
     </section>
   )
 }
