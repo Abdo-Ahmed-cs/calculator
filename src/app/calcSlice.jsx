@@ -17,9 +17,7 @@ const calcSlice = createSlice({
         },
         add: (state, action) => {
             const value = action.payload
-            if (Number(value) || value === '+'|| value === '-' || value === '*' || value === '/'){
-                state.value = state.value + "" + value
-            }
+            state.value = state.value + "" + value
         },
         evaluate: (state) => {
                 state.value = '' + eval(state.value)
