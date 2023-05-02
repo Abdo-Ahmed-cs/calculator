@@ -224,6 +224,7 @@
 @media (max-width: 600px) {
     .credentials {
         font-size: 0.8rem;
+        padding: 15px 20px;
     }
 
     .media {
