@@ -24,7 +24,9 @@ const calcSlice = createSlice({
             }
         },
         evaluate: (state) => {
-                state.value = '' + eval(state.value.replace(/^0+/, '').replace(/\b0+/g, ''))
+                if (state.value !== "0"){
+                    state.value = '' + eval(state.value.replace(/^0+/, '0').replace(/\b0+/g, ''))
+                }
         },
         changeTheme: (state, action) => {
             state.theme = action.payload
